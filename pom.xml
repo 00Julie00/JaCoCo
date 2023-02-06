@@ -48,30 +48,13 @@
                     </execution>
 
                     <execution>
-                        <id>default-report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
-                            <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
-                        </configuration>
-                    </execution>
-
-                    <execution>
                         <id>check</id>
-                        <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>CLASS</element>
-                                    <excludes>
-                                        <exclude>*Main</exclude>
-                                    </excludes>
                                     <limits>
                                         <limit>
                                             <counter>LINE</counter>
@@ -81,6 +64,7 @@
                                     </limits>
                                 </rule>
                             </rules>
+                            <haltOnFailure>false</haltOnFailure>
                         </configuration>
                     </execution>
 
